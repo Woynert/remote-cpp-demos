@@ -1,51 +1,51 @@
-#include <cstring>
 #include "type_serializers.h"
+#include <cstring>
 
 #define ul unsigned long
 
-void serialize_music (char** buff, int* cursor, Music* music) 
+void serialize_music (char** buff, int* cursor, Music* music)
 {
-    int c = *cursor;
+	int c = *cursor;
 
-    // name size
+	// name size
 
-    ul size = music->name.size();
-    memcpy(buff + c, &size, sizeof(ul));
-    c += sizeof(ul);
+	ul size = music->name.size ();
+	memcpy (buff + c, &size, sizeof (ul));
+	c += sizeof (ul);
 
-    // name content
+	// name content
 
-    memcpy(buff + c, music->name.data(), size);
-    c += size;
+	memcpy (buff + c, music->name.data (), size);
+	c += size;
 
-    // duration
+	// duration
 
-    memcpy(buff + c, &music->duration, sizeof(int));
-    c += sizeof(int);
+	memcpy (buff + c, &music->duration, sizeof (int));
+	c += sizeof (int);
 
-    *cursor = c;
+	*cursor = c;
 }
 
 void deserialize_music (char** buff, int* cursor, Music* music)
 {
-    int c = *cursor;
+	int c = *cursor;
 
-    // name size
+	// name size
 
-    ul size = 0;
-    memcpy(&size, buff + c, sizeof(ul));
-    c += sizeof(ul);
+	ul size = 0;
+	memcpy (&size, buff + c, sizeof (ul));
+	c += sizeof (ul);
 
-    // name content
+	// name content
 
-    music->name.resize(size);
-    memcpy(&music->name[0], buff + c, size);
-    c += size;
+	music->name.resize (size);
+	memcpy (&music->name[0], buff + c, size);
+	c += size;
 
-    // duration
+	// duration
 
-    memcpy (&music->duration, buff + c, sizeof(int));
-    c += sizeof(int);
+	memcpy (&music->duration, buff + c, sizeof (int));
+	c += sizeof (int);
 
-    *cursor = c;
+	*cursor = c;
 }

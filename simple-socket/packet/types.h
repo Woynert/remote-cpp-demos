@@ -5,8 +5,8 @@
 
 struct Music
 {
-    std::string name;
-    int duration;
+	std::string name;
+	int duration;
 };
 
 #endif // !TYPES_H

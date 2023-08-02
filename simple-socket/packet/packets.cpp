@@ -1,73 +1,66 @@
 #include <cstdio>
-#include <vector>
 #include <cstring>
+#include <vector>
 
 #include "packets.h"
-#include "types.h"
 #include "type_serializers.h"
+#include "types.h"
 
-void PacketMusic::serialize(
-    char** buff,
-    int* cursor,
-    std::vector<Music> music_vector
-)
+void PacketMusic::serialize (
+	char** buff, int* cursor, std::vector<Music> music_vector)
 {
-    int c = *cursor;
+	int c = *cursor;
 
-    // count
+	// count
 
-    unsigned long count = music_vector.size();
-    memcpy (buff + c, &count, sizeof(unsigned long));
-    c += sizeof(unsigned long);
+	unsigned long count = music_vector.size ();
+	memcpy (buff + c, &count, sizeof (unsigned long));
+	c += sizeof (unsigned long);
 
-    // music vector
+	// music vector
 
-    Music* music;
+	Music* music;
 
-    for (int i = 0; i < count; i++)
-    {
-        music = &music_vector[i];
+	for (int i = 0; i < count; i++) {
+		music = &music_vector[i];
 
-        // serialize
+		// serialize
 
-        serialize_music(buff, &c, music);
-    }
+		serialize_music (buff, &c, music);
+	}
 
-    *cursor = c;
+	*cursor = c;
 }
 
 PacketMusic* PacketMusic::deserialize (char** buff, int* cursor)
 {
-    int c = *cursor;
+	int c = *cursor;
 
-    // count
+	// count
 
-    unsigned long count = 0;
-    memcpy(&count, buff, sizeof(unsigned long));
-    c += sizeof(unsigned long);
+	unsigned long count = 0;
+	memcpy (&count, buff, sizeof (unsigned long));
+	c += sizeof (unsigned long);
 
-    // music vector
+	// music vector
 
-    Music* music = nullptr;
-    PacketMusic* packet = new PacketMusic();
-    packet->count = count;
+	Music* music = nullptr;
+	PacketMusic* packet = new PacketMusic ();
+	packet->count = count;
 
-    for (int i = 0; i < count; i++)
-    {
+	for (int i = 0; i < count; i++) {
 
-        // deserialize
+		// deserialize
 
-        music = new Music();
-        deserialize_music(buff, &c, music);
-        printf ("%d music: %s\n", i, music->name.c_str());
+		music = new Music ();
+		deserialize_music (buff, &c, music);
+		printf ("%d music: %s\n", i, music->name.c_str ());
 
-        // append
+		// append
 
-        //packet->music_vector.push_back(*music);
-    }
+		// packet->music_vector.push_back(*music);
+	}
 
-    *cursor = c;
-    return packet;
+	*cursor = c;
+	return packet;
 }
-
-

@@ -7,4 +7,3 @@ void serialize_music (char** buff, int* cursor, Music* music);
 void deserialize_music (char** buff, int* cursor, Music* music);
 
 #endif
-
