@@ -1,17 +1,17 @@
 
 ## Setup
 
-This demo uses Nix as a package manager. [Make sure to install it.] (https://nixos.org/download.html)
+This demo uses [gRPC](https://grpc.io/) with [Protocol Buffers](https://protobuf.dev/). Nix is employed as the package manager [Install Nix.](https://nixos.org/download.html)
 
 ## Building
 
-Enter Nix shell, this will put all required dependencies in your path.
+Enter Nix shell, this will put all required dependencies in your path:
 
 ```sh
 $ nix-shell
 ```
 
-Build
+Build:
 
 ```sh
 $ meson setup build
