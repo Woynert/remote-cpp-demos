@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service MusicStorage {
+    rpc GetList (GetListRequest) returns (GetListReply) {}
+}
+
+message GetListRequest {
+}
+
+message GetListReply {
+    repeated MusicItem items = 1;
+}
+
+message MusicItem {
+    string title = 1;
+    string autor = 2;
+    int32 duration = 3;
+}
+
