@@ -9,10 +9,17 @@ general_deps = [
   dependency('absl_strings')
 ]
 
+source_files = [
+  'main.cpp',
+  'cli.cpp',
+  'pdf.cpp'
+]
+
 # artifacts
 
 test_exe = executable(
   'test1',
-  'main.cpp',
-  dependencies : general_deps
+  source_files,
+  dependencies : general_deps,
+  include_directories : include_directories('./')
 )
