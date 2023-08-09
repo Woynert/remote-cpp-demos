@@ -12,7 +12,8 @@ general_deps = [
 source_files = [
   'main.cpp',
   'cli.cpp',
-  'pdf.cpp'
+  'pdf.cpp',
+  'worker.cpp'
 ]
 
 # artifacts
