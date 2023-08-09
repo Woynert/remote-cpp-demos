@@ -22,10 +22,5 @@ int pdf::url_to_pdf (std::string url)
 		std::cout << "Couldn't run chromium\n";
 	}
 
-	// print info
-
-	std::cout << absl::StrFormat (
-		"code %d, url %s, saved as %s.pdf\n", exit_code, url, file_name);
-
 	return exit_code;
 }
