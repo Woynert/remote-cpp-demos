@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <unordered_set>
 
 #include "absl/flags/flag.h"
 #include "absl/flags/internal/flag.h"
@@ -25,8 +26,10 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 
-	std::vector<std::string> urls =
+	std::vector<std::string> urls_vector =
 		absl::StrSplit (absl::GetFlag (FLAGS_urls), ",");
+
+	std::unordered_set<std::string> urls (urls_vector.begin(), urls_vector.end());
 
 	// generate pdfs
 
