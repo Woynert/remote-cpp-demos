@@ -1,7 +1,7 @@
 #include "cli.h"
 #include "pdf.h"
 
-void pdf::url_to_pdf (std::string url)
+int pdf::url_to_pdf (std::string url)
 {
 	// file name
 
@@ -26,4 +26,6 @@ void pdf::url_to_pdf (std::string url)
 
 	std::cout << absl::StrFormat (
 		"code %d, url %s, saved as %s.pdf\n", exit_code, url, file_name);
+
+	return exit_code;
 }

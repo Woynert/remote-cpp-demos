@@ -8,7 +8,7 @@
 
 namespace pdf {
 
-void url_to_pdf (std::string url);
+int url_to_pdf (std::string url);
 
 }
 
