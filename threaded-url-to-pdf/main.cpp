@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <unordered_set>
+#include <thread>
 
 #include "absl/flags/flag.h"
 #include "absl/flags/internal/flag.h"
@@ -11,9 +12,11 @@
 #include "absl/strings/str_format.h"
 #include "absl/strings/str_split.h"
 
-#include "pdf.h"
+#include "worker.h"
 
 ABSL_FLAG (std::string, urls, "", "Comma separated list of URLs to convert");
+
+const int WORKERS = 10;
 
 int main (int argc, char* argv[])
 {
@@ -33,8 +36,16 @@ int main (int argc, char* argv[])
 
 	// generate pdfs
 
-	for (auto url : urls) {
-		pdf::url_to_pdf (url);
+	std::vector<std::thread> workers;
+
+	for (int i = 0; i < WORKERS; i++) 
+	{
+		workers.emplace_back ( std::thread(concurrency::worker_convertor, i, &urls) );
+	}
+
+	for (auto &worker : workers)
+	{
+		worker.join();
 	}
 
 	return 0;
