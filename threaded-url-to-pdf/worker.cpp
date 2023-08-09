@@ -1,3 +1,4 @@
+#include <iostream>
 #include <worker.h>
 #include <pdf.h>
 
@@ -25,6 +26,6 @@ void concurrency::worker_convertor (
 		// process
 
 		int exit = pdf::url_to_pdf (url);
-		std::cout << "worker " << worker_id << ", exit " << exit << ", url " << url;
+		std::cout << "worker " << worker_id << ", exit " << exit << ", url " << url << std::endl;
 	}
 }
