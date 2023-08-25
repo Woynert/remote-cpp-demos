@@ -34,7 +34,7 @@ class MusicStorageServiceImpl final : public MusicStorage::Service
 			music->set_duration (item.duration);
 		}
 
-		printf ("Sending music items...");
+		printf ("Sending music items...\n");
 
 		return Status::OK;
 	}
