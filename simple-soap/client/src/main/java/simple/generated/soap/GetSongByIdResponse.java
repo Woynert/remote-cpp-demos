@@ -6,11 +6,12 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for getSongByIdResponse complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="getSongByIdResponse">
  *   &lt;complexContent>
@@ -22,33 +23,40 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
-@XmlAccessorType (XmlAccessType.FIELD)
-@XmlType (name = "getSongByIdResponse", propOrder = { "_return" })
-public class GetSongByIdResponse
-{
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "getSongByIdResponse", propOrder = {
+    "_return"
+})
+public class GetSongByIdResponse {
 
-	@XmlElement (name = "return") protected Song _return;
+    @XmlElement(name = "return")
+    protected Song _return;
 
-	/**
-	 * Gets the value of the return property.
-	 *
-	 * @return
-	 *     possible object is
-	 *     {@link Song }
-	 *
-	 */
-	public Song getReturn () { return _return; }
+    /**
+     * Gets the value of the return property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Song }
+     *     
+     */
+    public Song getReturn() {
+        return _return;
+    }
 
-	/**
-	 * Sets the value of the return property.
-	 *
-	 * @param value
-	 *     allowed object is
-	 *     {@link Song }
-	 *
-	 */
-	public void setReturn (Song value) { this._return = value; }
+    /**
+     * Sets the value of the return property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Song }
+     *     
+     */
+    public void setReturn(Song value) {
+        this._return = value;
+    }
+
 }

@@ -5,11 +5,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for getSongById complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="getSongById">
  *   &lt;complexContent>
@@ -21,25 +22,31 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
-@XmlAccessorType (XmlAccessType.FIELD)
-@XmlType (name = "getSongById", propOrder = { "arg0" })
-public class GetSongById
-{
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "getSongById", propOrder = {
+    "arg0"
+})
+public class GetSongById {
 
-	protected int arg0;
+    protected int arg0;
 
-	/**
-	 * Gets the value of the arg0 property.
-	 *
-	 */
-	public int getArg0 () { return arg0; }
+    /**
+     * Gets the value of the arg0 property.
+     * 
+     */
+    public int getArg0() {
+        return arg0;
+    }
 
-	/**
-	 * Sets the value of the arg0 property.
-	 *
-	 */
-	public void setArg0 (int value) { this.arg0 = value; }
+    /**
+     * Sets the value of the arg0 property.
+     * 
+     */
+    public void setArg0(int value) {
+        this.arg0 = value;
+    }
+
 }

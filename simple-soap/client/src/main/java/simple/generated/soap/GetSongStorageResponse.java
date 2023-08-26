@@ -6,11 +6,12 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for getSongStorageResponse complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="getSongStorageResponse">
  *   &lt;complexContent>
@@ -22,33 +23,40 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
-@XmlAccessorType (XmlAccessType.FIELD)
-@XmlType (name = "getSongStorageResponse", propOrder = { "_return" })
-public class GetSongStorageResponse
-{
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "getSongStorageResponse", propOrder = {
+    "_return"
+})
+public class GetSongStorageResponse {
 
-	@XmlElement (name = "return") protected Storage _return;
+    @XmlElement(name = "return")
+    protected Storage _return;
 
-	/**
-	 * Gets the value of the return property.
-	 *
-	 * @return
-	 *     possible object is
-	 *     {@link Storage }
-	 *
-	 */
-	public Storage getReturn () { return _return; }
+    /**
+     * Gets the value of the return property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Storage }
+     *     
+     */
+    public Storage getReturn() {
+        return _return;
+    }
 
-	/**
-	 * Sets the value of the return property.
-	 *
-	 * @param value
-	 *     allowed object is
-	 *     {@link Storage }
-	 *
-	 */
-	public void setReturn (Storage value) { this._return = value; }
+    /**
+     * Sets the value of the return property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Storage }
+     *     
+     */
+    public void setReturn(Storage value) {
+        this._return = value;
+    }
+
 }

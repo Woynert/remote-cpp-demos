@@ -6,11 +6,12 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for getSongAmountResponse complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="getSongAmountResponse">
  *   &lt;complexContent>
@@ -22,25 +23,32 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
-@XmlAccessorType (XmlAccessType.FIELD)
-@XmlType (name = "getSongAmountResponse", propOrder = { "_return" })
-public class GetSongAmountResponse
-{
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "getSongAmountResponse", propOrder = {
+    "_return"
+})
+public class GetSongAmountResponse {
 
-	@XmlElement (name = "return") protected int _return;
+    @XmlElement(name = "return")
+    protected int _return;
 
-	/**
-	 * Gets the value of the return property.
-	 *
-	 */
-	public int getReturn () { return _return; }
+    /**
+     * Gets the value of the return property.
+     * 
+     */
+    public int getReturn() {
+        return _return;
+    }
 
-	/**
-	 * Sets the value of the return property.
-	 *
-	 */
-	public void setReturn (int value) { this._return = value; }
+    /**
+     * Sets the value of the return property.
+     * 
+     */
+    public void setReturn(int value) {
+        this._return = value;
+    }
+
 }
