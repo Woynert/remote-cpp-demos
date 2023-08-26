@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Storage
 {
-	private List<Song> songs = new ArrayList<> ();
+	public List<Song> songs = new ArrayList<> ();
 
 	public boolean addSong (Song song) { return this.songs.add (song); }
 
@@ -13,7 +13,7 @@ public class Storage
 	{
 		for (Song song : songs) {
 			System.out.println (String.format (
-				"* %s - %s (%i) [%i]", song.title, song.autor, song.duration, song.year));
+				"* %s - %s (%d) [%d]", song.title, song.autor, song.duration, song.year));
 		}
 	}
 }

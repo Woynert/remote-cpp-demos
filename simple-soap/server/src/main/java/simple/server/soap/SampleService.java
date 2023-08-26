@@ -1,8 +1,8 @@
 package simple.server.soap;
 
-import simple.model.*;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import simple.model.*;
 
 @WebService
 public interface SampleService {
@@ -10,7 +10,5 @@ public interface SampleService {
 
 	@WebMethod Song getSongById (int songId);
 
-	//@WebMethod Storage (int fileId, String newName);
-
-	//@WebMethod boolean deleteFile (int fileId);
+	@WebMethod Storage getSongStorage ();
 }

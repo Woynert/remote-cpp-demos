@@ -10,7 +10,7 @@ public class App
 	{
 		// add some songs
 		System.out.println ("Server: Creating song storage");
-		Storage storage = new Storage();
+		Storage storage = new Storage ();
 
 		Song s;
 		s = new Song ("Coffee", "Jack Stauber", 59000, 2019);
@@ -25,6 +25,6 @@ public class App
 		// serve SOAP
 
 		System.out.println ("Gateway: Starting SOAP");
-		Endpoint.publish ("http://0.0.0.0:8080/sampleservice", new SampleServiceImp ());
+		Endpoint.publish ("http://0.0.0.0:8080/sampleservice", new SampleServiceImp (storage));
 	}
 }
